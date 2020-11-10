@@ -16,7 +16,8 @@
 | This method will return the number of words in an entry. | "I am a string!" | 4 |
 | letterCount() | | |
 | This method will return the number of letter characters in an entry. | "I am a, string?!" | 10 |
-
+|getTeaser() | | |
+| This method will take the first 8 words of an entry's body and display them as a teaser. | "I am a string and I like to eat pho on a cold day." | "I am a string and I like to..." |
 
 
 
