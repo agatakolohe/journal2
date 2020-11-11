@@ -1,21 +1,22 @@
 import Entry from './../src/entry.js';
 
 describe('Entry', () => {
+  let reusableEntry;
+
+  beforeEach(() => {
+    reusableEntry = new Entry("title", "this is the body of the journal entry we submitted");
+  });
   test('should correctly create an entry object with a title and body', () => {
-    const entry = new Entry("title", "this is the body");
-    expect(entry.title).toBe("title");
-    expect(entry.body).toBe("this is the body");
+    expect(reusableEntry.title).toBe("title");
+    expect(reusableEntry.body).toBe("this is the body of the journal entry we submitted");
   });
   test('should correctly count the number of words in an entry in the body', () =>  {
-    let words = new Entry("title", "this is the body");
-    expect(words.wordCount()).toEqual(4);
+    expect(reusableEntry.wordCount()).toEqual(10);
   });
   test('should correctly count the number of letters in the entry in the body', () => {
-    let letters = new Entry("title", "this is the body");
-    expect(letters.letterCount()).toEqual(13);
+    expect(reusableEntry.letterCount()).toEqual(41);
   });
   test('should correctly return the first 8 words of the entry', () =>  {
-    let firstEight = new Entry("title", "this is the body of the journal entry we submitted");
-    expect(firstEight.getTeaser()).toBe("this is the body of the journal entry...")
+    expect(reusableEntry.getTeaser()).toBe("this is the body of the journal entry...")
   });
 });
